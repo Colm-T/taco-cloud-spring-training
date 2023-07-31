@@ -1,6 +1,5 @@
 package com.example.tacocloudspringtraining.Model;
 
-import com.example.tacocloudspringtraining.Model.Taco;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class TacoOrder {
 
     private String ccNumber;
     private String ccExpiration;
-    private String ccVV;
+    private String ccCVV;
 
     private List<Taco> tacos = new ArrayList<>();
 
