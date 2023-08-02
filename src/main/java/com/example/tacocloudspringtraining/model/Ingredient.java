@@ -1,4 +1,4 @@
-package com.example.tacocloudspringtraining.Model;
+package com.example.tacocloudspringtraining.model;
 
 import lombok.Data;
 

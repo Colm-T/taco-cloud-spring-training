@@ -1,6 +1,7 @@
-package com.example.tacocloudspringtraining.Controller;
+package com.example.tacocloudspringtraining.controller;
 
-import com.example.tacocloudspringtraining.Model.TacoOrder;
+import com.example.tacocloudspringtraining.data.OrderRepository;
+import com.example.tacocloudspringtraining.model.TacoOrder;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,12 @@ import org.springframework.web.bind.support.SessionStatus;
 @SessionAttributes("tacoOrder")
 public class OrderController {
 
+    private OrderRepository orderRepository;
+
+    public OrderController(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
     @GetMapping("/current")
     public String orderForm() {
         return "orderForm";
@@ -30,6 +37,7 @@ public class OrderController {
 
         log.info("Order submitted: {}", tacoOrder);
 
+        orderRepository.save(tacoOrder);
         sessionStatus.setComplete();
 
         return "redirect:/";

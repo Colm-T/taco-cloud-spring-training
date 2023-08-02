@@ -1,4 +1,4 @@
-package com.example.tacocloudspringtraining.Web;
+package com.example.tacocloudspringtraining.web;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
